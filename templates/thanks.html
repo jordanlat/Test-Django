@@ -8,7 +8,15 @@
 </head>
 <body>
     <h1> Merci !  </h1>
-    <p>{{ getToto }}</p>
+    <!--
+        <p>{{ getToto }}</p>
+    -->
+    
+    {% with val=thisToto %}
+    <html>
+        <p> Bonjour <b>{{val}}</b></p>
+    </html>
+    {% endwith %}
 </body>
 </html>
 

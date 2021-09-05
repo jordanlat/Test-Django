@@ -13,15 +13,20 @@ def thanks(request):
     # thisToto = "this toto"
     # context = Context({"toto": getToto})
     
-    
+    # thisToto = "No name"
+    # thisToto = request.session.get('toto')
+    # print("this toto =" ,thisToto)
+    thisToto = "No name"
+    thisToto = request.session.get('toto')
+    print("this toto =" ,thisToto)
+    # getToto(request)
     #register = template.Library()
     #@register.simple_tag
 
-    return render(request, 'thanks.html')
+    return render(request, 'thanks.html', {"thisToto": thisToto})
 
-def getToto():
-        
+def getToto(thisrequest):
         thisToto = "No name"
-        thisToto = request.session.get('toto')
+        thisToto = thisrequest.session.get('toto')
         print("this toto =" ,thisToto)
         return thisToto
