@@ -19,7 +19,7 @@ from .forms import NameForm
 
 def index(request):
     # if this is a POST request we need to process the form data
-    rendered = render_to_string('name.html', {'foo': 'bar'})
+    rendered = render_to_string('login.html', {'foo': 'bar'})
 
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -32,22 +32,22 @@ def index(request):
             # print(form.cleaned_data['nom'])
             #print(form.cleaned_data['nom'])
             #print(form.cleaned_data['prenom'])
-            toto = form.cleaned_data['nom']
-            request.session['toto'] = toto
+            form_name = form.cleaned_data['nom']
+            request.session['name'] = form_name
             return HttpResponseRedirect('/thanks/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
         form = NameForm()
 
-    return render(request, 'name.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 
 
 """"
 def index(request):
     # if this is a POST request we need to process the form data
-    rendered = render_to_string('name.html')
+    rendered = render_to_string('login.html')
 
     return render(request, rendered)
 """""

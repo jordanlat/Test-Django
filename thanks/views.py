@@ -16,17 +16,17 @@ def thanks(request):
     # thisToto = "No name"
     # thisToto = request.session.get('toto')
     # print("this toto =" ,thisToto)
-    thisToto = "No name"
-    thisToto = request.session.get('toto')
-    print("this toto =" ,thisToto)
+    thisName = "No name"
+    thisName = request.session.get('name')
+    print("this name =" ,thisName)
     # getToto(request)
     #register = template.Library()
     #@register.simple_tag
 
-    return render(request, 'thanks.html', {"thisToto": thisToto})
+    return render(request, 'thanks.html', {"thisName": thisName})
 
 def getToto(thisrequest):
-        thisToto = "No name"
-        thisToto = thisrequest.session.get('toto')
-        print("this toto =" ,thisToto)
-        return thisToto
+        thisName = "No name"
+        thisName = thisrequest.session.get('toto')
+        print("this toto =" ,thisName)
+        return thisName
