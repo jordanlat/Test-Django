@@ -30,11 +30,14 @@ def index(request):
             # ...
             # redirect to a new URL:
             # print(form.cleaned_data['nom'])
-            #print(form.cleaned_data['nom'])
-            #print(form.cleaned_data['prenom'])
+            # print(form.cleaned_data['nom'])
+            # print(form.cleaned_data['prenom'])
             form_name = form.cleaned_data['nom']
-            request.session['name'] = form_name
-            return HttpResponseRedirect('/thanks/')
+            request.session['nom'] = form_name
+            form_prenom = form.cleaned_data['prenom']
+            request.session['prenom'] = form_prenom
+            # return HttpResponseRedirect('/thanks/')
+            return HttpResponseRedirect('/menu/')
 
     # if a GET (or any other method) we'll create a blank form
     else:
