@@ -16,19 +16,25 @@
             <a href="/">retour</a>
             <div class="center">
                 <h1>Django Project</h1>
-                <div class="hello">
-                    <h3>Bonjour {{nom}}.{{prenom}}</h3>
-                </div>
             </div>
         </div>
     </header>
     <div class="content">
-        <div class="bt_list">
-            <a href="/waiting"><input class="w-40 btn btn-lg btn-primary" type="button" value="Liste d'attente"></a>
-            <a href="/thanks"><input class="w-40 btn btn-lg btn-primary" type="button" value="Chansons"></a>
-            <a href="/thanks"><input class="w-40 btn btn-lg btn-primary" type="button" value="C'est nouveau"></a>
-            <a href="/thanks"><input class="w-40 btn btn-lg btn-primary" type="button" value="Profil"></a>
+        <div class="list">
+            <h2>Helllo It's waiting time !!</h2>
+            <!-- Fonctionne mais passe par méthode GET
+                <form action="counter">
+                    <button id="bt" type="submit" value="Click" >Press me</button>
+                </form>   
+            -->
+            <button id="bt" onclick="location.href='{% url 'counter' %}'" value="Click">Press me</button>
+
         </div>
     </div>
 </body>
+<script>
+    document.getElementById('bt').addEventListener('click', ()=>{
+        console.log("JS get clicked")
+    })
+</script>
 </html>

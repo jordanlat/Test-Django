@@ -22,4 +22,5 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('thanks/', include('thanks.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('waiting/', include('waiting.urls')),
 ]
